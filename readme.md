@@ -5,6 +5,7 @@
 ### Resources
 
 1. loader svg - [loading.io](https://loading.io/)
+2. Api - [unsplash](https://unsplash.com/)
 
 ### bits
 
@@ -38,4 +39,20 @@
   /* This will force center it regardless of the size(starting point of width) */
   transform: translate(-50%,-50%);
 }
+```
+
+4. Fetch data
+```
+//Get photos from unspalsh API
+async function getPhotos(){
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        console.log(data)
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+getPhotos()
 ```

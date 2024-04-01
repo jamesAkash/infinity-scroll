@@ -16,7 +16,7 @@ body {
 h1{
   text-align: center;
   margin: 25px 0 15px;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem,4.5vw,2.5rem);
   font-weight: 600;
   letter-spacing: -1px;
 }
@@ -38,4 +38,21 @@ h1{
   left: 50%;
   /* This will force center it regardless of the size(starting point of width) */
   transform: translate(-50%,-50%);
+}
+
+/* Image container */
+.image-container{
+  margin: 10px 30%;
+}
+
+.image-container img{
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* Media Query : Large smartphone */
+@media screen and (max-width:600px) {
+  .image-container{
+    margin: 10px;
+  }
 }
