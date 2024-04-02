@@ -56,3 +56,37 @@ async function getPhotos(){
 
 getPhotos()
 ```
+
+5. Creating Helper functions(for inserting to DOM) to follow DRY concept
+
+```
+// Helper function to set attributes to element
+function setAttributes(element,attributes){
+    for(let key in attributes){
+        element.setAttribute(key,attributes[key])
+    }
+}
+
+// Create elements for Links and Photos and add to dom
+function displayPhotos(){
+    // Run function for each obj
+    photosArray.forEach((photo)=>{
+        // Create <a> to undplash
+        const item = document.createElement('a');
+       setAttributes(item,{
+        href:photo.links.html,
+        target:"_blank"
+       })
+        // Create img
+        const img = document.createElement("img");
+        setAttributes(img,{
+            src:photo.urls.regular,
+            alt:photo.alt_description,
+            title:photo.alt_description
+        })
+        // Put img inside <a> and put both inside imageContainer Element
+        item.appendChild(img)
+        imageContainer.appendChild(item)
+    })
+}
+```
