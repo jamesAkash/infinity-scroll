@@ -1,6 +1,7 @@
 # Infinite Scroll Implementation
 
 ### Description
+A mini project to implement infinite scroll data fetch using unsplash API.
 
 ### Resources
 
