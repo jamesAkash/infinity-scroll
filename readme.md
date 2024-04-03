@@ -90,3 +90,26 @@ function displayPhotos(){
     })
 }
 ```
+
+6. Scroll Implementation, Scroll Event
+
+-> If
+window.innerHeight + window.scrollY > document.body.offsetY - 1000
+
+//Here scrollY gives scroll value with respect to top of the page.
+//body.offSetY gives the height of entire content ie which are not even in view
+
+-> Do something(In our case it is fetch more images)
+
+7. load Event
+
+// Check if images were loaded
+function imageLoaded(){
+    imagesLoaded += 1;
+    if(imagesLoaded === totalImages){
+    ready=true;
+    loader.hidden = true;
+    }
+}
+
+`img.addEventListener('load',imageLoaded)`
